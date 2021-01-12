@@ -6,14 +6,19 @@
 //
 
 import Foundation
-import UIKit
 import SwiftUI
+
+#if !os(macOS)
+import UIKit
+#endif
+
+@available(OSX 10.15, *)
 
 public extension Color {
 	static let shopHeaderColor = Color.init("ShopHeaderColor")
 	static let shopBGColor = Color.init("ShopBGColor")
 	static let saytDescriptionColor = Color.init("SAYTDescriptionColor")
-	static let viewBackgroundPrimaryColor = Color("Gray 200")
+    static let viewBackgroundPrimaryColor = Color("Gray 200")
 	static let shopHeaderIndicatorPrimaryColor = Color("gg_color_green_500")
 	static let shopSearchBarPlaceholderTextPrimaryColor = Color("Gray 600")
 	static let cancelTextPrimaryColor = Color("Gray 700")
@@ -22,6 +27,9 @@ public extension Color {
 	static let whiteColor = Color.white
 	static let grayColorIcon = Color("gg_color_gray_Icon")
 }
+
+
+@available(OSX 10.15, *)
 
 public extension Font {
 	//Shop

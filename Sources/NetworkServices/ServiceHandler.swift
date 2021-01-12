@@ -162,10 +162,14 @@ public class ServiceHandler {
     }
     
     public class func cancelRequests() {
-        URLSession.shared.getAllTasks { dataTasks in
-            for task in dataTasks {
-                task.cancel()
+        if #available(OSX 10.11, *) {
+            URLSession.shared.getAllTasks { dataTasks in
+                for task in dataTasks {
+                    task.cancel()
+                }
             }
+        } else {
+            // Fallback on earlier versions
         }
     }
 }
